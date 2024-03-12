@@ -7,6 +7,7 @@
     <head>
         <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
         <link rel="stylesheet" media="screen" href="css/loginp.css" />
+        <link rel="script" href="./js/loginform.js">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <noscript class="NoScript">Your browser does not support JavaScript.</noscript>
         <meta name="description" content="The official JNR website // LOGIN">
@@ -31,15 +32,22 @@
             <p class="TextLogin">Welcome <span class=LoginDecoTxt>back </span>friend</p>
             </div>
             <div class="loginfs">
-                <?php include "../php/login.php";?>
-            <form action="/login" method="post" class="loginForm">
+            <form action="/login" method="post" class="loginForm" action="./php/form_validation.php" onsubmit="return validateForm()">
                 <label for="username">Username:</label><br>
-                <input class="inplogin" type="text" id="username" name="username"><br>
+                <input class="inplogin" class="username" type="text" id="username" name="username"><br>
+                <span class="errormsg" id="nameErr"><?php echo $nameErr; ?></span>
+
                 <label for="email">Email:</label><br>
-                <input class="inplogin" type="email" id="email" name="email"><br>
+                <input class="inplogin" class="email" type="email" id="email" name="email" ><br>
+                <span class="errormsg" id="emailErr"><?php echo $emailErr; ?></span>
+
                 <label for="password">Password:</label><br>
-                <input class="inplogin" type="password" id="password" name="password"><br>
-                <input class="inpsubmitlogin" type="submit" value="Submit">
+                <input class="inplogin" class="password "type="password" id="password" name="password"><br>
+                <span class="errormsg" id="passwordErr"><?php echo $passwordErr; ?></span>
+
+                <input class="inpsubmitlogin" type="submit" value="Check Errors" onclick="validateForm()">
+                <p class="errormsg">You have to fill out all fields!</p>
+
                 <p  class="signin">Are you new? <a class="signinlink" href="./signup.html">Sign in</a></p>
             </form>
         </div>

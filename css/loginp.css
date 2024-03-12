@@ -86,3 +86,8 @@
     vertical-align: -webkit-baseline-middle-buffer;
     vertical-align: middle;
 }
+.errormsg {
+    color: red;
+    font-weight: 900;
+    display: none;
+}

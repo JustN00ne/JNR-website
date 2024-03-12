@@ -107,6 +107,12 @@ font-family: "Lato", sans-serif;
     width: 100%; /* Add this property */
     z-index: 100;
 }         
+@media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .navdiv, .HeroBg {
+      width: 100%;
+    }
+  }
 .loginbutton {
     display: flex;
     text-decoration: none;
@@ -115,8 +121,7 @@ font-family: "Lato", sans-serif;
     border-radius: 5px;
     cursor: pointer;
     padding: 20px;
-    margin-left: 835px; 
-    margin-right: 10px;
+    float: right;
     background-color: white;
     font-family: "Lato", sans-serif;
     font-weight: 700;
